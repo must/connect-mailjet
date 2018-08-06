@@ -1,0 +1,30 @@
+{
+  "name": "connect-mailjet",
+  "version": "0.0.1",
+  "description": "Mailjet integration for connect-platform",
+  "main": ".",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loreanvictor/connect-mailjet.git"
+  },
+  "keywords": [
+    "connect-platform",
+    "low-code",
+    "mailjet",
+    "CONNECT",
+    "no-code"
+  ],
+  "author": "Mustapha Ben Chaaben <mustapha3892@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loreanvictor/connect-mailjet/issues"
+  },
+  "homepage": "https://github.com/loreanvictor/connect-mailjet#readme",
+  "dependencies": {
+    "connect-platform": "^0.2.2",
+    "node-mailjet": "^3.2.1"
+  }
+}
