@@ -29,8 +29,8 @@ platform.core.node({
     Object.assign(
       inputs.letter,
       {
-        'FromEmail': inputs.fromEmail.email,
-        'FromName': inputs.fromEmail.name,
+        'FromEmail': inputs.fromEmail.Email,
+        'FromName': inputs.fromEmail.Name,
         'Recipients': inputs.recipients
       }
     )
