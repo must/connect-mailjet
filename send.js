@@ -35,16 +35,17 @@ platform.core.node({
         "Content": "VGhpcyBpcyB5b3VyIGF0dGFjaGVkIGZpbGUhISEK", // Base64 for "This is your attached file!!!"
       }]
   }
-  console.log(emailData);
+  console.log(inputs.envelope);
   console.log(
     sendEmail
-    .request(emailData)
+    .request(inputs.envelope)
       .then(function(returnData) {
         console.log(returnData);
         output('success', true);
       })
       .catch(function() {
         console.log('error');
+        output('success', false);
       })
   );
 });
