@@ -25,6 +25,9 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
+  if (! Array.isArray(inputs.recipients)) 
+    inputs.recipients = [ inputs.recipients ];
+
   output('envelope',
     Object.assign(
       inputs.letter,
