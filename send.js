@@ -17,13 +17,13 @@ platform.core.node({
       email: 'the email envelope to send',
     },
     outputs: {
-      success: 'If the  <span class="hl-blue">envelope</span> was sent successfully.'
+      success: 'If the  <span class="hl-blue">envelope</span> was sent successfully.',
+      response: 'The  <span class="hl-blue">promise</span> that was used for the request.'
     },
   }
 }, (inputs, output, control) => {
-  var sendEmail = mailjet.post('send');
-
-  var emailData = {
+  /* @Todo add file attachement support */
+  /*var emailData = {
       'FromEmail': 'mustapha@benchaaben.com',
       'FromName': 'My Name',
       'Subject': 'Test with the NodeJS Mailjet wrapper',
@@ -34,18 +34,19 @@ platform.core.node({
         "Filename": "test.txt",
         "Content": "VGhpcyBpcyB5b3VyIGF0dGFjaGVkIGZpbGUhISEK", // Base64 for "This is your attached file!!!"
       }]
-  }
-  console.log(inputs.envelope);
-  console.log(
-    sendEmail
-    .request(inputs.envelope)
-      .then(function(returnData) {
-        console.log(returnData);
-        output('success', true);
-      })
-      .catch(function() {
-        console.log('error');
-        output('success', false);
-      })
-  );
+  }*/
+
+  var sendEmail = mailjet.post('send');
+
+  sendEmail
+  .request(inputs.envelope)
+    .then(function(response) {
+      /* @Todo return response? */
+      output('success', true);
+    })
+    .catch(function() {
+      output('success', false);
+
+      control('error sending email');
+    });
 });

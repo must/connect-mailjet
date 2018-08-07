@@ -23,5 +23,9 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
+  if (typeof inputs.emailObject === 'string' || inputs.emailObject instanceof String) {
+    inputs.emailObject = { 'Email': inputs.emailObject };
+  }
+
   output('recipients', inputs.recipients.concat(inputs.emailObject));
 });

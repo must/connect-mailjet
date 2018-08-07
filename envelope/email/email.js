@@ -1,4 +1,4 @@
-const mailjet = require('../mailjet');
+const mailjet = require('../../mailjet');
 const platform = require('connect-platform');
 
 

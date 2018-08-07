@@ -1,9 +1,9 @@
-const mailjet = require('../mailjet');
+const mailjet = require('../../mailjet');
 const platform = require('connect-platform');
 
 
 platform.core.node({
-  path: '/mailjet/envelope/addSubjectToLetter',
+  path: '/mailjet/envelope/letter/addSubject',
   public: false,
   inputs: [
     'letter',

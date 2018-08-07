@@ -25,6 +25,14 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
+  if (typeof inputs.fromEmail === 'string' || inputs.fromEmail instanceof String) {
+    inputs.fromEmail = { 'Email': inputs.fromEmail };
+  }
+
+  if (typeof inputs.recipients === 'string' || inputs.recipients instanceof String) {
+    inputs.recipients = { 'Email': inputs.recipients };
+  }
+
   if (! Array.isArray(inputs.recipients)) 
     inputs.recipients = [ inputs.recipients ];
 
