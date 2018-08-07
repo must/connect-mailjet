@@ -3,7 +3,7 @@ const platform = require('connect-platform');
 
 
 platform.core.node({
-  path: '/mailjet/envelope/addRecipients',
+  path: '/mailjet/envelope/addRecipient',
   public: false,
   inputs: [
     'emailObject',
@@ -23,5 +23,5 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
-  output('recipients', inputs.recipients.push(inputs.emailObject));
+  output('recipients', inputs.recipients.concat(inputs.emailObject));
 });

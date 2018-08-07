@@ -25,19 +25,6 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
-  console.log(inputs.letter);
-  console.log({
-      'FromEmail': inputs.fromEmail.email,
-      'FromName': inputs.fromEmail.name
-    });
-  console.log(Object.assign(
-    inputs.letter,
-    {
-      'FromEmail': inputs.fromEmail.email,
-      'FromName': inputs.fromEmail.name
-    }
-  ));
-
   output('envelope',
     Object.assign(
       inputs.letter,
