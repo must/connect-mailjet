@@ -11,8 +11,8 @@ module.exports.platform = {
         'envelope/letter/addSubject',
 
         'envelope/email/email',
-        'envelope/email/addVariables',
 
+        'envelope/addVariables',
         'envelope/recipients',
         'envelope/addRecipient',
       ]
@@ -27,7 +27,7 @@ module.exports.platform = {
       '/mail/envelope/letter/addSubject': '/mailjet/envelope/letter/addSubject',
 
       '/mail/envelope/email': '/mailjet/envelope/email',
-      '/mail/envelope/email/addVariables': '/mailjet/envelope/email/addVariables',
+      '/mail/envelope/addVariables': '/mailjet/envelope/addVariables',
 
       '/mail/envelope/recipients': '/mailjet/envelope/recipients',
       '/mail/envelope/addRecipient': '/mailjet/envelope/addRecipient',
