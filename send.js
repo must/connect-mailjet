@@ -9,7 +9,10 @@ platform.core.node({
     'envelope'
   ],
   outputs: [
-    'success'
+    'response',
+  ],
+  controlOutputs: [
+    'error',
   ],
   hints: {
     node: 'Sends an email using the email <span class="hl-blue">envelope</span>.',
@@ -17,8 +20,10 @@ platform.core.node({
       email: 'the email envelope to send',
     },
     outputs: {
-      success: 'If the  <span class="hl-blue">envelope</span> was sent successfully.',
-      response: 'The  <span class="hl-blue">promise</span> that was used for the request.'
+      response: 'The <span class="hl-blue">response</span> object that was returned by the API.'
+    },
+    controlOutputs: {
+      error: 'An error was triggered during the send process.',
     },
   }
 }, (inputs, output, control) => {
@@ -41,12 +46,10 @@ platform.core.node({
   sendEmail
   .request(inputs.envelope)
     .then(function(response) {
-      /* @Todo return response? */
-      output('success', true);
+      output('response', response);
     })
-    .catch(function() {
-      output('success', false);
-
-      control('error sending email');
+    .catch(function(error) {
+      output('response', error);
+      control('error');
     });
 });
