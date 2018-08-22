@@ -4,33 +4,29 @@ module.exports.platform = {
       native : [
         'send',
 
-        'envelope/envelope',
-        
-        'envelope/letter/text',
-        'envelope/letter/template',
-        'envelope/letter/addSubject',
+        'message/text',
+        'message/template',
 
-        'envelope/email/email',
+        'message/emailObject',
+        'message/to',
 
-        'envelope/addVariables',
-        'envelope/to',
-        'envelope/addRecipient',
+        'message/add/subject',
+        'message/add/variables',
+        'message/add/recipient',
       ]
     },
     aliases: {
       '/mail/send': '/mailjet/send',
-      
-      '/mail/envelope': '/mailjet/envelope',
 
-      '/mail/envelope/letter/text': '/mailjet/envelope/letter/text',
-      '/mail/envelope/letter/template': '/mailjet/envelope/letter/template',
-      '/mail/envelope/letter/addSubject': '/mailjet/envelope/letter/addSubject',
+      '/mail/message/text': '/mailjet/message/text',
+      '/mail/message/template': '/mailjet/message/template',
 
-      '/mail/envelope/email': '/mailjet/envelope/email',
-      '/mail/envelope/addVariables': '/mailjet/envelope/addVariables',
+      '/mail/message/emailObject': '/mailjet/message/emailObject',
+      '/mail/message/to': '/mailjet/message/to',
 
-      '/mail/envelope/to': '/mailjet/envelope/to',
-      '/mail/envelope/addRecipient': '/mailjet/envelope/addRecipient',
+      '/mail/message/add/subject': '/mailjet/message/add/subject',
+      '/mail/message/add/variables': '/mailjet/message/add/variables',
+      '/mail/message/add/recipient': '/mailjet/message/add/recipient',
     }
   }
 }

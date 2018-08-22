@@ -1,9 +1,9 @@
-const mailjet = require('../mailjet');
+const mailjet = require('../../mailjet');
 const platform = require('connect-platform');
 
 
 platform.core.node({
-  path: '/mailjet/envelope/addVariables',
+  path: '/mailjet/message/add/variables',
   public: false,
   inputs: [
     'variables',

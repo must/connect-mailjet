@@ -6,7 +6,7 @@ platform.core.node({
   path: '/mailjet/send',
   public: false,
   inputs: [
-    'envelope'
+    'message'
   ],
   outputs: [
     'response',
@@ -15,9 +15,9 @@ platform.core.node({
     'error',
   ],
   hints: {
-    node: 'Sends an email using the email <span class="hl-blue">envelope</span>.',
+    node: 'Sends an email using the email <span class="hl-blue">message</span>.',
     inputs: {
-      email: 'the email envelope to send',
+      email: 'the email message to send',
     },
     outputs: {
       response: 'The <span class="hl-blue">response</span> object that was returned by the API.'
@@ -31,7 +31,7 @@ platform.core.node({
 
   sendEmail
   .request({
-      "Messages": [ inputs.envelope ]
+      "Messages": [ inputs.message ]
     })
     .then(function(response) {
       output('response', response);

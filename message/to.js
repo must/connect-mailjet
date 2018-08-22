@@ -3,7 +3,7 @@ const platform = require('connect-platform');
 
 
 platform.core.node({
-  path: '/mailjet/envelope/to',
+  path: '/mailjet/message/to',
   public: false,
   inputs: [
     'emailObject'
