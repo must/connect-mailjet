@@ -13,4 +13,14 @@ util.sanitize = function(inputs) {
     inputs.to = [ inputs.to ];
 }
 
+util.sanitizeEmailObject = function(inputs) {
+  if (typeof inputs.emailObject === 'string' || inputs.emailObject instanceof String)
+    inputs.emailObject = { 'Email': inputs.emailObject };
+}
+
+util.sanitizeItemToArray = function(inputs, property) {
+  if (! Array.isArray(inputs[property])) 
+    inputs[property] = [ inputs[property] ];
+}
+
 module.exports = util;

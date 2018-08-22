@@ -1,4 +1,5 @@
 const mailjet = require('../mailjet');
+const util = require('../util');
 const platform = require('connect-platform');
 
 
@@ -21,9 +22,7 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
-  if (typeof inputs.emailObject === 'string' || inputs.emailObject instanceof String) {
-    inputs.emailObject = { 'Email': inputs.emailObject };
-  }
+  util.sanitizeEmailObject(inputs);
   
   output('to', [ inputs.emailObject ]);
 });
