@@ -6,25 +6,25 @@ platform.core.node({
   path: '/mailjet/message/add/subject',
   public: false,
   inputs: [
-    'letter',
+    'message',
     'subject'
   ],
   outputs: [
-    'letter'
+    'message'
   ],
   hints: {
     node: 'Add a <span class="hl-blue">subject</span> to a letter.',
     inputs: {
-      letter: 'The letter to which the subject will be added.',
-      subject: 'The subject that will be added to the letter.',      
+      message: 'The message to which the subject will be added.',
+      subject: 'The subject that will be added to the message.',      
     },
     outputs: {
-      letter: '<span class="hl-blue">Letter</span> to be sealed in an envelope.',
+      message: '<span class="hl-blue">Letter</span> to be sealed in an envelope.',
     },
   }
 }, (inputs, output, control) => {
   output(
-    'letter',
+    'message',
     Object.assign(inputs.letter, { 'Subject': inputs.subject })
   );
 });

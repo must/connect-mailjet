@@ -16,10 +16,10 @@ platform.core.node({
     node: 'Add variables to a <span class="hl-blue">object</span>.',
     inputs: {
       variables: 'The variables as JSON. Variables can be used in template like this <span class="hl-blue">{{ var:variableName }}</span>',
-      object: 'A <span class="hl-blue">object</span> without variables which can be either be an <span class="hl-blue">email</span> or a <span class="hl-blue">letter</span>.',
+      object: 'An <span class="hl-blue">object</span> without variables which can be either be an <span class="hl-blue">emailObject</span> or a <span class="hl-blue">message</span>.',
     },
     outputs: {
-      object: 'A <span class="hl-blue">object</span> with variables that can be used in an envelope.',
+      object: 'An <span class="hl-blue">object</span> with variables that can be used in an envelope.',
     },
   }
 }, (inputs, output, control) => {
