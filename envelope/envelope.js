@@ -7,8 +7,8 @@ platform.core.node({
   public: false,
   inputs: [
     'letter',
-    'fromEmail',
-    'recipients'
+    'from',
+    'to'
   ],
   outputs: [
     'envelope'
@@ -17,32 +17,30 @@ platform.core.node({
     node: 'Construct an email <span class="hl-blue">envelope</span>.',
     inputs: {
       letter: 'The letter to be sent.',
-      fromEmail: 'The from email object.',
-      recipients: 'The recipients of the email'
+      from: 'The from email object.',
+      to: 'The recipients of the email'
     },
     outputs: {
       envelope: '<span class="hl-blue">Envelope</span> to be sent.'
     },
   }
 }, (inputs, output, control) => {
-  if (typeof inputs.fromEmail === 'string' || inputs.fromEmail instanceof String) {
-    inputs.fromEmail = { 'Email': inputs.fromEmail };
+  if (typeof inputs.from === 'string' || inputs.from instanceof String) {
+    inputs.from = { 'Email': inputs.from };
   }
 
-  if (typeof inputs.recipients === 'string' || inputs.recipients instanceof String) {
-    inputs.recipients = { 'Email': inputs.recipients };
+  if (typeof inputs.to === 'string' || inputs.to instanceof String) {
+    inputs.to = { 'Email': inputs.to };
   }
 
-  if (! Array.isArray(inputs.recipients)) 
-    inputs.recipients = [ inputs.recipients ];
+  if (! Array.isArray(inputs.to)) 
+    inputs.to = [ inputs.to ];
 
   output('envelope',
-    Object.assign(
-      inputs.letter,
+    Object.assign( inputs.letter,
       {
-        'FromEmail': inputs.fromEmail.Email,
-        'FromName': inputs.fromEmail.Name,
-        'Recipients': inputs.recipients
+        'From': inputs.from,
+        'To': inputs.to
       }
     )
   );

@@ -14,11 +14,14 @@ if (config.APIPublicKey && config.APISecretKey) {
   // Setup our mailjet instance
   mailjet = nodeMailjet.connect(
     config.APIPublicKey,
-    config.APISecretKey
+    config.APISecretKey,
+    {
+      version: 'v3.1',
+    }
   );
 
 } else {
-  control('no_connection')
+  console.log('Error establising connection to mailjet');
 }
 
 module.exports = mailjet;

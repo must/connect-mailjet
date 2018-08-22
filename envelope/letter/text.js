@@ -21,5 +21,5 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
-  output('letter', { 'Text-part': inputs.textPart });
+  output('letter', { 'TextPart': inputs.textPart });
 });

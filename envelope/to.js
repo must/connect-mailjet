@@ -3,21 +3,21 @@ const platform = require('connect-platform');
 
 
 platform.core.node({
-  path: '/mailjet/envelope/recipients',
+  path: '/mailjet/envelope/to',
   public: false,
   inputs: [
     'emailObject'
   ],
   outputs: [
-    'recipients'
+    'to'
   ],
   hints: {
-    node: 'Construct a recipients\' list from <span class="hl-blue">emailObject</span>.',
+    node: 'Construct a to\' list from <span class="hl-blue">emailObject</span>.',
     inputs: {
       emailObject: 'The email object that will be used for the contact.'
     },
     outputs: {
-      recipients: 'A <span class="hl-blue">recipients</span> list that can be used as the recievers\' emails.',
+      to: 'A <span class="hl-blue">to</span> list that can be used as the recievers\' emails.',
     },
   }
 }, (inputs, output, control) => {
@@ -25,5 +25,5 @@ platform.core.node({
     inputs.emailObject = { 'Email': inputs.emailObject };
   }
   
-  output('recipients', [ inputs.emailObject ]);
+  output('to', [ inputs.emailObject ]);
 });

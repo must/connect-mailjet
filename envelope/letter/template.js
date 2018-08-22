@@ -25,9 +25,9 @@ platform.core.node({
 }, (inputs, output, control) => {
   output('templateLetter',
     {
-      'Mj-TemplateID': inputs.id,
-      'Mj-TemplateLanguage': true,
-      'Vars': inputs.variables,
+      'TemplateID': parseInt(inputs.id),
+      'TemplateLanguage': true,
+      'Variables': inputs.variables,
     }
   );
 });

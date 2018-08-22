@@ -13,7 +13,7 @@ module.exports.platform = {
         'envelope/email/email',
 
         'envelope/addVariables',
-        'envelope/recipients',
+        'envelope/to',
         'envelope/addRecipient',
       ]
     },
@@ -29,7 +29,7 @@ module.exports.platform = {
       '/mail/envelope/email': '/mailjet/envelope/email',
       '/mail/envelope/addVariables': '/mailjet/envelope/addVariables',
 
-      '/mail/envelope/recipients': '/mailjet/envelope/recipients',
+      '/mail/envelope/to': '/mailjet/envelope/to',
       '/mail/envelope/addRecipient': '/mailjet/envelope/addRecipient',
     }
   }

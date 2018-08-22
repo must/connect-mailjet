@@ -25,9 +25,10 @@ platform.core.node({
 }, (inputs, output, control) => {
   var returnObject;
 
-  if('Vars' in inputs.object) {
+  if('Variables' in inputs.object) {
     // We simply merge our variables in the existing Vars object property
-    Object.assign(inputs.object.Vars, inputs.variables);
+
+    Object.assign(inputs.object.Variables, inputs.variables);
     
     returnObject = inputs.object;
   } else {
@@ -35,7 +36,7 @@ platform.core.node({
     returnObject = Object.assign(
       inputs.object,
       {
-        'Vars': inputs.variables
+        'Variables': inputs.variables
       }
     );
   }

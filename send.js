@@ -27,6 +27,21 @@ platform.core.node({
     },
   }
 }, (inputs, output, control) => {
+  var sendEmail = mailjet.post('send');
+
+  sendEmail
+  .request({
+      "Messages": [ inputs.envelope ]
+    })
+    .then(function(response) {
+      output('response', response);
+    })
+    .catch(function(error) {
+      console.log(JSON.stringify(error, null, 2));
+      control('error');
+    });
+});
+
   /* @Todo add file attachement support */
   /*var emailData = {
       'FromEmail': 'mustapha@benchaaben.com',
@@ -40,16 +55,3 @@ platform.core.node({
         "Content": "VGhpcyBpcyB5b3VyIGF0dGFjaGVkIGZpbGUhISEK", // Base64 for "This is your attached file!!!"
       }]
   }*/
-
-  var sendEmail = mailjet.post('send');
-
-  sendEmail
-  .request(inputs.envelope)
-    .then(function(response) {
-      output('response', response);
-    })
-    .catch(function(error) {
-      output('response', error);
-      control('error');
-    });
-});
