@@ -21,7 +21,7 @@ if (config.APIPublicKey && config.APISecretKey) {
   );
 
 } else {
-  console.log('Error establising connection to mailjet');
+  console.log('Missing mailjet public and/or secret API keys');
 }
 
 module.exports = mailjet;
