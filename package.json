@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loreanvictor/connect-mailjet.git"
+    "url": "git+https://github.com/must/connect-mailjet"
   },
   "keywords": [
     "connect-platform",
@@ -21,9 +21,9 @@
   "author": "Mustapha Ben Chaaben <mustapha3892@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/loreanvictor/connect-mailjet/issues"
+    "url": "https://github.com/must/connect-mailjet/issues"
   },
-  "homepage": "https://github.com/loreanvictor/connect-mailjet#readme",
+  "homepage": "https://github.com/must/connect-mailjet#readme",
   "dependencies": {
     "connect-platform": "^0.2.4",
     "node-mailjet": "^3.2.1"
