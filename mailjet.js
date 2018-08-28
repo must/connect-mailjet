@@ -1,4 +1,3 @@
-const path = require('path');
 const nodeMailjet = require('node-mailjet');
 
 const platform = require('connect-platform');
