@@ -32,5 +32,16 @@ module.exports.platform = {
       '/mail/message/add/variables': '/mailjet/message/add/variables',
       '/mail/message/add/recipient': '/mailjet/message/add/recipient',
     }
+  },
+  hints: {
+    setup:
+`First, you need a mailjet account. You can signup for <a href="https://app.mailjet.com/signup">free</a>. Go to your mailjet <a href="https://app.mailjet.com/account/api_keys">API Key Management page</a>, and get the public and secret keys.
+Then,<br><br>
+1) copy the content of the keys you found in the content field of the new key
+2) add a sample config like this and fill in with the two keys that you coppied`,
+    sampleConfig: {
+      APIPublicKey: "APIPublicKey",
+      APISecretKey: "APISecretKey"
+    }
   }
 }

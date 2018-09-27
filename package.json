@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/must/connect-mailjet#readme",
   "dependencies": {
-    "connect-platform": "^0.2.4",
+    "connect-firestore": "0.0.2",
+    "connect-platform": "^0.2.5",
     "node-mailjet": "^3.2.1"
   }
 }
