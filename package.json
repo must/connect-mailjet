@@ -1,6 +1,6 @@
 {
   "name": "connect-mailjet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mailjet integration for connect-platform",
   "main": ".",
   "scripts": {
