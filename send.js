@@ -8,10 +8,9 @@ platform.core.node({
   inputs: [
     'message'
   ],
-  outputs: [
-    'response',
-  ],
+  outputs: [],
   controlOutputs: [
+    'sent',
     'error',
   ],
   hints: {
@@ -19,27 +18,29 @@ platform.core.node({
     inputs: {
       email: 'the email message to send',
     },
-    outputs: {
-      response: 'The <span class="hl-blue">response</span> object that was returned by the API.'
-    },
     controlOutputs: {
+      sent: 'The email was sent. Look at console for the retreived response object.',
       error: 'An error was triggered during the send process.',
     },
   }
-}, (inputs, output, control) => {
-  var sendEmail = mailjet.post('send');
+}, (inputs, output, control, error) => {
+  if (!mailjet) error(new Error('Mailjet not configured properly.'));
+  else {
+    var sendEmail = mailjet.post('send');
 
-  sendEmail
-  .request({
-      "Messages": [ inputs.message ]
-    })
-    .then(function(response) {
-      output('response', response);
-    })
-    .catch(function(error) {
-      console.log(JSON.stringify(error, null, 2));
-      control('error');
-    });
+    sendEmail
+    .request({
+        "Messages": [ inputs.message ]
+      })
+      .then(function(response) {
+        console.log(JSON.stringify(response, null, 2));
+        control('sent');
+      })
+      .catch(function(error) {
+        console.log(JSON.stringify(error, null, 2));
+        control('error');
+      });
+    }
 });
 
   /* @Todo add file attachement support */

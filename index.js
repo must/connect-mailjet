@@ -41,8 +41,10 @@ Then,<br><br>
 2) get the public and secret keys<br><br>
 3) copy and paste each key in the relevant section of the config as shown below`,
     sampleConfig: {
-      APIPublicKey: "coppied API key",
-      APISecretKey: "coppied Secret key"
+      mailjet: {
+        APIPublicKey: "coppied API key",
+        APISecretKey: "coppied Secret key"
+      }
     }
   }
 }
