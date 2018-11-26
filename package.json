@@ -1,6 +1,6 @@
 {
   "name": "connect-mailjet",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mailjet integration for connect-platform",
   "main": ".",
   "scripts": {
@@ -25,7 +25,12 @@
   },
   "homepage": "https://github.com/must/connect-mailjet#readme",
   "dependencies": {
-    "connect-platform": "^0.2.7",
     "node-mailjet": "^3.2.1"
+  },
+  "peerDependencies": {
+    "connect-platform": "*"
+  },
+  "devDependencies": {
+    "connect-platform": "^0.2.7"
   }
 }
