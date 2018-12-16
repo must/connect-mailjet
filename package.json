@@ -29,5 +29,8 @@
   },
   "peerDependencies": {
     "connect-platform": "*"
+  },
+  "devDependencies": {
+    "connect-platform": "^0.2.7"
   }
 }
