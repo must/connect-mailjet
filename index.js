@@ -15,6 +15,7 @@ module.exports.platform = {
         'message/add/subject',
         'message/add/variables',
         'message/add/recipient',
+        'message/add/options',
       ]
     },
     aliases: {
@@ -31,6 +32,7 @@ module.exports.platform = {
       '/mail/message/add/subject': '/mailjet/message/add/subject',
       '/mail/message/add/variables': '/mailjet/message/add/variables',
       '/mail/message/add/recipient': '/mailjet/message/add/recipient',
+      '/mail/message/add/options': '/mailjet/message/add/options',
     }
   },
   hints: {
