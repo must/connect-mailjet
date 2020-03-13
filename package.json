@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/must/connect-mailjet#readme",
   "dependencies": {
-    "node-mailjet": "^3.2.1"
+    "node-mailjet": "^3.3.1"
   },
   "peerDependencies": {
     "connect-platform": "*"
